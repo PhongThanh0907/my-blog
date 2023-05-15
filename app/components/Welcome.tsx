@@ -1,10 +1,9 @@
 import React from "react";
+
 import Reveal from "./FramerMotion/Reveal";
 import TextCharacter from "./FramerMotion/TextCharacter";
 
-type Props = {};
-
-const Welcome = (props: Props) => {
+const Welcome = () => {
   return (
     <div className="text-stone-100 fixed inset-0 flex justify-center items-center flex-col gap-5 z-10">
       <div className="uppercase text-2xl font-semibold tracking-wider">
