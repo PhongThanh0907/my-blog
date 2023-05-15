@@ -8,7 +8,7 @@ import * as random from "maath/random/dist/maath-random.cjs";
 const Stars = (props: any) => {
   const ref = useRef<null | any>(null);
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(5000), { radius: 1.2 })
+    random.inSphere(new Float32Array(6000), { radius: 1.2 })
   );
 
   useFrame((state, delta) => {
@@ -22,7 +22,7 @@ const Stars = (props: any) => {
         <PointMaterial
           transparent
           color="#d4b6ca"
-          size={0.002}
+          size={0.003}
           sizeAttenuation={true}
           depthWrite={false}
         />
@@ -33,7 +33,7 @@ const Stars = (props: any) => {
 
 const StarsCanvas = () => {
   return (
-    <div className="w-full h-auto absolute inset-0 z-10">
+    <div className="w-full h-auto absolute inset-0">
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={null}>
           <Stars />
