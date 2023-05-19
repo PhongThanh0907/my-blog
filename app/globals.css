@@ -2,34 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .hover-item {
+    @apply hover:opacity-70 duration-300 active:opacity-100
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .width-80 {
+    @apply w-[80%] mx-auto
+  }
+  .flex-center {
+    @apply flex justify-center items-center
+  }
+  .flex-between {
+    @apply flex justify-between items-center
+  }
 }
 
 .arrow-right {
   position: absolute;
-  top: 0px;
-  left: 38px;
+  top: 10px;
+  left: 52px;
   transform: translate(-50%, -50%);
   transform: rotate(270deg);
   cursor: pointer;
@@ -51,6 +42,18 @@ body {
 
 .arrow-right span:nth-child(3) {
   animation-delay: 0.4s;
+}
+
+.bg-BluePurple {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(3, 235, 255) 0%,
+    rgb(152, 70, 242) 100.2%
+  );
+}
+
+.bg-HeaderMenu {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
 }
 
 @keyframes animate {
