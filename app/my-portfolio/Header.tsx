@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 import ButtonMenuBar from "../components/ButtonMenuBar";
@@ -12,10 +12,35 @@ import { MENU_HEADER } from "../constants";
 
 const Header = () => {
   const [openButtonMenu, setOpenButtonMenu] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+
+  const onMouseLeave = () => {
+    setTimeout(() => {
+      setOpenButtonMenu(false);
+    }, 4000);
+  };
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <div className="relative">
-      <div className="width-80 flex-between h-20 ">
+    <div
+      className={`flex items-center fixed top-0 w-full z-50 ${
+        scrolled
+          ? "h-16 duration-300 bg-black/40 transition-all"
+          : "h-24 duration-300 bg-header transition-all"
+      }`}
+    >
+      <div className="width-80 flex-between">
         <div onClick={() => setOpenButtonMenu(!openButtonMenu)}>
           <ButtonMenuBar open={openButtonMenu} />
         </div>
@@ -40,7 +65,10 @@ const Header = () => {
         </div>
       </div>
       {openButtonMenu ? (
-        <div className="absolute bg-HeaderMenu rounded-md top-20 flex flex-col pl-8 font-semibold text-xl h-80 w-96 opacity-100 duration-500 text-stone-100">
+        <div
+          onMouseLeave={onMouseLeave}
+          className="z-50 absolute left-0 right-0 bg-HeaderMenu rounded-md top-20 flex flex-col pl-8 font-semibold text-xl h-80 w-full lg:w-96 opacity-100 duration-500 text-stone-100"
+        >
           {MENU_HEADER.map((item, index) => (
             <div key={index} className="relative w-full py-6">
               <Link
@@ -54,7 +82,7 @@ const Header = () => {
           ))}
         </div>
       ) : (
-        <div className="absolute top-[75px] z-0 text-stone-100 bg-HeaderMenu flex flex-col pt-6 pl-8 text-xl gap-y-3  h-0 w-96 duration-500 opacity-0">
+        <div className="z-50 absolute top-[75px] left-0 z-0 text-stone-100 bg-HeaderMenu flex flex-col pt-6 pl-8 text-xl gap-y-3  h-0 w-96 duration-500 opacity-0">
           {MENU_HEADER.map((item, index) => (
             <div key={index} className="relative w-full py-3.5">
               <Link
