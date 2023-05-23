@@ -23,7 +23,7 @@
 }
 
 .bg-header {
-  background: linear-gradient(to right, #000000, rgb(27, 48, 55))
+  background: linear-gradient(to right, #000000, rgb(27, 48, 55));
 }
 
 .arrow-right {
@@ -94,8 +94,77 @@
   animation: textLight 5s linear infinite;
 }
 
-.hero-img{
+.hero-img {
   animation: rotate 5s linear 2s infinite alternate;
+}
+
+.loadingPage {
+  background-color: #60d7ec;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: calc(50vh - 50px);
+  left: calc(50vw - 50px);
+  border-radius: 10%;
+  animation: loader_rotate 5.6s linear infinite;
+  transform-origin: center;
+}
+
+.shape1,
+.shape2,
+.shape3,
+.shape4 {
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+
+.shape1 {
+  background-color: #ff8fcf;
+  animation: shape1 2.8s infinite;
+}
+
+.shape2 {
+  background-color: #00c2ba;
+  animation: shape2 2.8s infinite;
+}
+
+.shape3 {
+  background-color: #ce96fb;
+  animation: shape3 2.8s infinite;
+}
+
+.shape4 {
+  background-color: #037a90;
+  animation: shape4 2.8s infinite;
+}
+
+.glitch {
+  font-weight: 700;
+  text-transform: uppercase;
+  position: absolute;
+  color: #fff;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.glitch::before {
+  color: #f0f;
+  animation: glitch 3s infinite;
+}
+.glitch::after {
+  color: #0ff;
+  animation: glitch 2s infinite;
 }
 
 @keyframes textLight {
@@ -159,7 +228,8 @@
 @keyframes upDown {
   0% {
     transform: translateY(-3px);
-  } 100% {
+  }
+  100% {
     transform: translateY(3px);
   }
 }
@@ -182,5 +252,95 @@
   }
   100% {
     transform: rotate(-2deg);
+  }
+}
+
+@keyframes loader_rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shape1 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px) rotate(360deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shape2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100px) rotate(360deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shape3 {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(-100px) rotate(360deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shape4 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px) rotate(360deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    left: -2px;
+    top: 1px;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0;
+  }
+  25% {
+    left: 2px;
+    top: -1px;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0;
+  }
+  50% {
+    left: -2px;
+    top: 1px;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0;
+  }
+  75% {
+    left: 2px;
+    top: -1px;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0;
+  }
+  100% {
+    left: -2px;
+    top: 1px;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0;
   }
 }
