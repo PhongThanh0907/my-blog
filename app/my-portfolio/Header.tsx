@@ -2,15 +2,15 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import ButtonMenuBar from "../components/ButtonMenuBar";
 
 import Github from "../../public/github.png";
 import Linkedin from "../../public/linkedin.png";
-import Link from "next/link";
 import { MENU_HEADER } from "../constants";
 
-const Header = () => {
+const HeaderMemo = () => {
   const [openButtonMenu, setOpenButtonMenu] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
@@ -98,5 +98,7 @@ const Header = () => {
     </div>
   );
 };
+
+const Header = React.memo(HeaderMemo);
 
 export default Header;

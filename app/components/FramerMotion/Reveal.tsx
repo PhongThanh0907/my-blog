@@ -8,7 +8,7 @@ interface RevealProps {
   width?: string;
 }
 
-const Reveal: React.FC<RevealProps> = ({ children, width }) => {
+const RevealMemo: React.FC<RevealProps> = ({ children, width }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
@@ -53,5 +53,7 @@ const Reveal: React.FC<RevealProps> = ({ children, width }) => {
     </div>
   );
 };
+
+const Reveal = React.memo(RevealMemo);
 
 export default Reveal;

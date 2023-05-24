@@ -7,7 +7,7 @@ import Image from "next/image";
 import TextLight from "../components/TextLight";
 import HeroBG from "../../public/hero-bg.jpg";
 
-const OverView = () => {
+const OverViewMemo = () => {
   return (
     <div id="overview" className="py-10">
       <div className="width-80 grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -79,5 +79,7 @@ const OverView = () => {
     </div>
   );
 };
+
+const OverView = React.memo(OverViewMemo);
 
 export default OverView;

@@ -14,7 +14,7 @@ const Test = (props: Props) => {
           opacity: 1,
         }}
         transition={{ duration: 0.5 }}
-        whileInView={{ opacity: 0, y: -290, x: 150 }}
+        whileInView={{ opacity: 0, y: -290, x: 50 }}
         className="fixed z-10"
         style={{
           top: "calc(50vh - 60px)",

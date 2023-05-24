@@ -5,7 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.cjs";
 
-const Stars = (props: any) => {
+const Stars = React.memo((props: any) => {
   const ref = useRef<null | any>(null);
   const [sphere] = useState(() =>
     random.inSphere(new Float32Array(6000), { radius: 1.2 })
@@ -29,7 +29,9 @@ const Stars = (props: any) => {
       </Points>
     </group>
   );
-};
+});
+
+Stars.displayName = "Stars";
 
 const StarsCanvas = () => {
   return (

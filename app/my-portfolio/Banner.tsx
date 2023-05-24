@@ -7,9 +7,8 @@ import { motion } from "framer-motion";
 
 import Background from "../../public/background.jpg";
 import ButtonBanner from "../components/ButtonBanner";
-import Reveal from "../components/FramerMotion/Reveal";
 
-const Banner = () => {
+const BannerMemo = () => {
   const [text, count] = useTypewriter({
     words: [
       "Welcome to my Portfolio",
@@ -23,15 +22,13 @@ const Banner = () => {
   return (
     <div className="text-stone-100 h-[450px] lg:h-[44rem] relative pt-24 overflow-hidden">
       <div className="h-40 lg:h-64 relative font-semibold width-80 pt-16 lg:pt-40 z-10 pl-6">
-        <Reveal width="w-full relative h-24 lg:h-20">
-          <h1 className="text-3xl lg:text-5xl">
-            <span className="mr-3">{text}</span>
-            <Cursor cursorColor="#2cf9fa" />
-          </h1>
-          <h2 className="absolute bottom-0 text-xs uppercase text-gray-400 tracking-[6px]">
-            Software Engineer
-          </h2>
-        </Reveal>
+        <h1 className="text-3xl lg:text-5xl">
+          <span className="mr-3">{text}</span>
+          <Cursor cursorColor="#2cf9fa" />
+        </h1>
+        <h2 className="absolute bottom-0 text-xs uppercase text-gray-400 tracking-[6px]">
+          Software Engineer
+        </h2>
 
         <motion.div
           initial={{
@@ -57,5 +54,7 @@ const Banner = () => {
     </div>
   );
 };
+
+const Banner = React.memo(BannerMemo);
 
 export default Banner;

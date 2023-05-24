@@ -8,6 +8,7 @@ import Banner from "./Banner";
 import OverView from "./OverView";
 import Test from "./Test";
 import WorkExperience from "./WorkExperience";
+import Technologies from "./Technologies";
 
 type Props = {};
 
@@ -35,6 +36,7 @@ const MyPortfolioPage = (props: Props) => {
           <Banner />
           <OverView />
           <WorkExperience />
+          <Technologies />
         </motion.div>
       </>
     </main>

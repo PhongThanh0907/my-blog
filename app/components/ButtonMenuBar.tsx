@@ -4,7 +4,7 @@ interface ButtonMenuBarProps {
   open: boolean;
 }
 
-const ButtonMenuBar: React.FC<ButtonMenuBarProps> = ({ open }) => {
+const ButtonMenuBarMemo: React.FC<ButtonMenuBarProps> = ({ open }) => {
   return (
     <div className="h-[26px] w-11 relative flex justify-center z-30 cursor-pointer">
       <div
@@ -29,5 +29,7 @@ const ButtonMenuBar: React.FC<ButtonMenuBarProps> = ({ open }) => {
     </div>
   );
 };
+
+const ButtonMenuBar = React.memo(ButtonMenuBarMemo);
 
 export default ButtonMenuBar;
