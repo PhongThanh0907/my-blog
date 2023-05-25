@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const FirstLoading = () => {
   return (
     <div className="overflow-hidden z-50 hidden lg:inline">
-      <motion.div
+      {/* <motion.div
         initial={{
           y: -30,
           x: -90,
@@ -30,7 +30,7 @@ const FirstLoading = () => {
           left: "calc(50vw - 100px)",
           background: "linear-gradient(to right, #000000, #434343)",
         }}
-      ></motion.div>
+      ></motion.div> */}
 
       <motion.div
         initial={{
@@ -40,7 +40,7 @@ const FirstLoading = () => {
           width: 1000,
           skewX: -30,
         }}
-        transition={{ duration: 1, delay: 0.5 }}
+        transition={{ duration: 1 }}
         whileInView={{
           opacity: 0,
           x: -200,
@@ -54,7 +54,7 @@ const FirstLoading = () => {
         }}
       ></motion.div>
 
-      <motion.div
+      {/* <motion.div
         initial={{
           y: 30,
           x: 90,
@@ -78,7 +78,7 @@ const FirstLoading = () => {
           left: "calc(50vw - 100px)",
           background: "linear-gradient(to right, #434343, #000000)",
         }}
-      ></motion.div>
+      ></motion.div> */}
 
       <motion.div
         initial={{
@@ -88,7 +88,7 @@ const FirstLoading = () => {
           width: 1000,
           skewX: -30,
         }}
-        transition={{ duration: 1, delay: 0.5 }}
+        transition={{ duration: 1 }}
         whileInView={{
           opacity: 0,
           x: 60,

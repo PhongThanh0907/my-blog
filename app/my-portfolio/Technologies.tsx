@@ -17,7 +17,7 @@ const TechnologiesMemo = () => {
           initial={{
             opacity: 0,
           }}
-          transition={{ duration: 1, delay: 1 }}
+          transition={{ duration: 1 }}
           whileInView={{ opacity: 1 }}
           className={`w-20 h-20 lg:w-28 lg:h-28 moveUpDown ml-4 lg:ml-0
       ${index % 2 == 0 ? "animation" : "animation-1"}
