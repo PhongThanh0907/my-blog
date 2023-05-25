@@ -13,7 +13,6 @@ const RevealMemo: React.FC<RevealProps> = ({ children, width }) => {
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
   const slideControls = useAnimation();
-  console.log(children);
 
   useEffect(() => {
     if (isInView) {

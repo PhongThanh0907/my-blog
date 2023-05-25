@@ -15,11 +15,10 @@ const TechnologiesMemo = () => {
       {technologies.map((technology, index) => (
         <motion.div
           initial={{
-            y: -150,
             opacity: 0,
           }}
-          transition={{ duration: technology.transition }}
-          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1 }}
+          whileInView={{ opacity: 1 }}
           className={`w-20 h-20 lg:w-28 lg:h-28 moveUpDown ml-4 lg:ml-0
       ${index % 2 == 0 ? "animation" : "animation-1"}
         `}

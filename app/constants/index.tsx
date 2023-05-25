@@ -12,6 +12,8 @@ import TYPESCRIPT from "../../public/technologies/typescript.png";
 import NEXT from "../../public/technologies/nextjs.png";
 import ANTD from "../../public/technologies/antd.png";
 import GIT from "../../public/technologies/git.png";
+import Project1 from "../../public/project1.webp";
+import Project2 from "../../public/project2.jpg";
 
 export const MENU_HEADER = [
   { title: "Banner", id: "/", delay: "200" },
@@ -59,62 +61,110 @@ export const technologies = [
   {
     name: "HTML 5",
     icon: <Image src={HTML} alt="icon" />,
-    transition: 0.3,
   },
   {
     name: "CSS 3",
     icon: <Image src={CSS} alt="icon" />,
-    transition: 0.6,
   },
   {
     name: "JavaScript",
     icon: <Image src={JAVASCRIPT} alt="icon" />,
-    transition: 0.9,
   },
   {
     name: "TypeScript",
     icon: <Image src={TYPESCRIPT} alt="icon" />,
-    transition: 1.2,
   },
   {
     name: "React JS",
     icon: <Image src={REACT} alt="icon" />,
-    transition: 1.5,
   },
   {
     name: "Next JS",
     icon: <Image src={NEXT} alt="icon" />,
-    transition: 1.8,
   },
   {
     name: "Redux Toolkit",
     icon: <Image src={REDUX} alt="icon" />,
-    transition: 2.1,
   },
   {
     name: "Tailwind CSS",
     icon: <Image src={TAILWIND} alt="icon" />,
-    transition: 2.4,
   },
   {
     name: "Ant Design",
     icon: <Image src={ANTD} alt="icon" />,
-    transition: 2.7,
   },
   {
     name: "Node JS",
     icon: <Image src={NODE} alt="icon" />,
-    transition: 3,
   },
   {
     name: "MongoDB",
     icon: <Image src={MONGO} alt="icon" />,
-    transition: 3.3,
   },
 
   {
     name: "git",
     icon: <Image src={GIT} alt="icon" />,
-    transition: 3.6,
+  },
+];
+
+export const projects = [
+  {
+    name: "Shop Card",
+    description:
+      "Build user UX/UI, show products, search by brands, type, price and sort, shopping cart, others...",
+    tags: [
+      {
+        name: "react",
+        color: "text-blue-500",
+      },
+      {
+        name: "typescript",
+        color: "text-[#00FFFF]",
+      },
+      {
+        name: "nodejs",
+        color: "text-[#ADFF2F]",
+      },
+      {
+        name: "mongodb",
+        color: "text-green-500",
+      },
+      {
+        name: "tailwind",
+        color: "text-purple-500",
+      },
+    ],
+    image: Project1,
+    source_code_link: "https://github.com/PhongThanh0907/Shop-Ecommerce-V2",
+  },
+  {
+    name: "Porfolio",
+    description: "Build UX/UI, Animation, Show information",
+    tags: [
+      {
+        name: "nextjs",
+        color: "text-blue-500",
+      },
+      {
+        name: "typescript",
+        color: "text-[#00FFFF]",
+      },
+      {
+        name: "three",
+        color: "text-[#ADFF2F]",
+      },
+      {
+        name: "framer-motion",
+        color: "text-green-500",
+      },
+      {
+        name: "tailwind",
+        color: "text-purple-500",
+      },
+    ],
+    image: Project2,
+    source_code_link: "https://github.com/PhongThanh0907/my-blog",
   },
 ];

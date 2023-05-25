@@ -167,6 +167,22 @@
   animation: glitch 2s infinite;
 }
 
+.animation {
+  animation: animate1 2s infinite ease alternate;
+}
+
+.animation-1 {
+  animation: animate2 2s infinite ease alternate;
+}
+
+.spinning {
+  border-top-color: #ffffff !important;
+  border-right-color: #ffffff !important;
+  border-bottom-color: #ffffff !important;
+  -webkit-animation: spinner 1s linear infinite;
+  animation: spinner 1s linear infinite;
+}
+
 @keyframes textLight {
   0%,
   18%,
@@ -342,5 +358,33 @@
     top: 1px;
     text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
       -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0;
+  }
+}
+
+
+@keyframes animate1 {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes animate2 {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

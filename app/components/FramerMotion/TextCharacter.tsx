@@ -9,7 +9,6 @@ interface TextCharacterProps {
 
 const TextCharacterMemo: React.FC<TextCharacterProps> = ({ text }) => {
   const letters = Array.from(text);
-  console.log(text);
   const container = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({

@@ -6,9 +6,12 @@ import { motion } from "framer-motion";
 import Header from "./Header";
 import Banner from "./Banner";
 import OverView from "./OverView";
-import Test from "./Test";
+import FirstLoading from "./FirstLoading";
 import WorkExperience from "./WorkExperience";
 import Technologies from "./Technologies";
+import Project from "./Project";
+import Contact from "./Contact";
+import ToasterProvider from "../providers/ToasterProvider";
 
 type Props = {};
 
@@ -16,27 +19,22 @@ const MyPortfolioPage = (props: Props) => {
   return (
     <main className="min-h-screen bg-black">
       <>
-        <motion.div
-          initial={{
-            opacity: 1,
-          }}
-          transition={{ duration: 1 }}
-          whileInView={{ opacity: 0 }}
-        >
-          <Test />
-        </motion.div>
+        <FirstLoading />
         <motion.div
           initial={{
             opacity: 0,
           }}
-          transition={{ delay: 1 }}
+          transition={{ delay: 1.5 }}
           whileInView={{ opacity: 1 }}
         >
+          <ToasterProvider />
           <Header />
           <Banner />
           <OverView />
           <WorkExperience />
           <Technologies />
+          <Project />
+          <Contact />
         </motion.div>
       </>
     </main>
