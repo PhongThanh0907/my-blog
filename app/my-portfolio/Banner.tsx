@@ -20,7 +20,10 @@ const BannerMemo = () => {
   });
 
   return (
-    <div className="text-stone-100 h-[450px] lg:h-[44rem] relative pt-24 overflow-hidden">
+    <div
+      id="banner"
+      className="text-stone-100 h-[450px] lg:h-[44rem] relative pt-24 overflow-hidden"
+    >
       <div className="h-40 lg:h-64 relative font-semibold width-80 pt-16 lg:pt-40 z-10 pl-6">
         <h1 className="text-3xl lg:text-5xl">
           <span className="mr-3">{text}</span>

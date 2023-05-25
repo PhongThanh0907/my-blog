@@ -71,26 +71,28 @@ const HeaderMemo = () => {
         >
           {MENU_HEADER.map((item, index) => (
             <div key={index} className="relative w-full py-6">
-              <Link
+              <a
+                onClick={() => setOpenButtonMenu(false)}
                 className="absolute left-[10px] opacity-100 hover-item"
                 href={item.id}
                 style={{ transition: `all ${item.delay}ms` }}
               >
                 {item.title}
-              </Link>
+              </a>
             </div>
           ))}
         </div>
       ) : (
-        <div className="z-50 absolute top-[75px] left-0 z-0 text-stone-100 bg-HeaderMenu flex flex-col pt-6 pl-8 text-xl gap-y-3  h-0 w-96 duration-500 opacity-0">
+        <div className="z-50 absolute top-[75px] left-0 text-stone-100 bg-HeaderMenu flex flex-col pt-6 pl-8 text-xl gap-y-3  h-0 w-96 duration-500 opacity-0">
           {MENU_HEADER.map((item, index) => (
             <div key={index} className="relative w-full py-3.5">
-              <Link
+              <a
+                onClick={() => setOpenButtonMenu(false)}
                 className="text-white absolute left-[70%] opacity-0"
                 href={item.id}
               >
                 {item.title}
-              </Link>
+              </a>
             </div>
           ))}
         </div>
