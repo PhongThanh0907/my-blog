@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,12 +13,35 @@ import { MENU_HEADER } from "../constants";
 const HeaderMemo = () => {
   const [openButtonMenu, setOpenButtonMenu] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const modalRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLDivElement>(null);
 
-  const onMouseLeave = () => {
-    setTimeout(() => {
-      setOpenButtonMenu(false);
-    }, 4000);
-  };
+  const closeModal = useCallback(() => {
+    setOpenButtonMenu(false);
+  }, []);
+
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        if (!buttonRef.current?.contains(event.target as Node)) {
+          closeModal();
+        }
+      }
+    };
+
+    if (openButtonMenu) {
+      document.addEventListener("mousedown", handleOutsideClick);
+    } else {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [openButtonMenu, closeModal]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -41,7 +64,11 @@ const HeaderMemo = () => {
       }`}
     >
       <div className="width-80 flex-between">
-        <div onClick={() => setOpenButtonMenu(!openButtonMenu)}>
+        <div
+          id="button-menu"
+          ref={buttonRef}
+          onClick={() => setOpenButtonMenu(!openButtonMenu)}
+        >
           <ButtonMenuBar open={openButtonMenu} />
         </div>
         <div className="flex gap-4">
@@ -66,8 +93,10 @@ const HeaderMemo = () => {
       </div>
       {openButtonMenu ? (
         <div
-          onMouseLeave={onMouseLeave}
-          className="z-50 absolute left-0 right-0 bg-HeaderMenu rounded-md top-20 flex flex-col pl-8 font-semibold text-xl h-80 w-full lg:w-96 opacity-100 duration-500 text-stone-100"
+          ref={modalRef}
+          className={`z-50 absolute left-0 right-0 bg-HeaderMenu rounded-md ${
+            scrolled ? "top-[60px]" : "top-[92px]"
+          }  flex flex-col pl-8 font-semibold text-xl h-80 w-full lg:w-96 opacity-100 duration-500 text-stone-100`}
         >
           {MENU_HEADER.map((item, index) => (
             <div key={index} className="relative w-full py-6">

@@ -17,7 +17,6 @@ const MyPortfolioPage = () => {
     <main className="min-h-screen bg-black relative">
       <>
         <ParticlesContainer />
-
         <ToasterProvider />
         <Header />
         <Banner />
