@@ -49,7 +49,7 @@ const ParticlesContainer = () => {
           },
           links: {
             color: "#87f9ff",
-            distance: 150,
+            distance: 200,
             enable: true,
             opacity: 0.5,
             width: 1,
@@ -70,7 +70,7 @@ const ParticlesContainer = () => {
           number: {
             density: {
               enable: true,
-              area: 2500,
+              area: 4000,
             },
             value: 80,
           },
