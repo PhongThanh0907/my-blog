@@ -44,6 +44,9 @@ const ExperienceCard = React.memo(
           >
             {experience.company_name}
           </p>
+          <p className="text-gray-400 tracking-wider text-[18px] font-semibold">
+            Team size: {experience.teamSize}
+          </p>
         </div>
         <p>
           Technology:{" "}

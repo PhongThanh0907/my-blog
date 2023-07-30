@@ -3,6 +3,7 @@ export type Experiences = {
   company_name: string;
   icon: string;
   technology: string;
+  teamSize: number;
   iconBg: string;
   date: string;
   points: string[];

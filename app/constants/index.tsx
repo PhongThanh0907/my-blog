@@ -30,6 +30,7 @@ export const experiences = [
     title: "Frontend Developer",
     company_name: "Acom Company",
     icon: Anpha,
+    teamSize: 8,
     iconBg: "#383E56",
     date: "June 2022 - Present",
     technology:
